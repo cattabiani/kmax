@@ -1,3 +1,8 @@
+:root {
+    --max-width: 400px;
+    --max-height: 800px;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -11,9 +16,9 @@ body {
 #app {
     background: white;
     width: 100%; /* Adjust width as needed for responsiveness */
-    max-width: 400px; /* Maximum width for larger screens */
+    max-width: var(--max-width); /* Maximum width for larger screens */
     height: 100%; 
-    max-height: 800px;
+    max-height: var(--max-height);
     display: flex;
     flex-direction: column;
     border-radius: 8px;
@@ -52,15 +57,71 @@ body {
     background-color: #003d7a; /* Darker background color on hover */
 }
 
-.notes-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    flex: 1;
-    overflow-y: auto;
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    width: 100%; /* Full width */
+    max-width: var(--max-width);
+    height: 100%; /* Full height */
+    max-height: var(--max-height);
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+    justify-content: center; /* Centered horizontally */
+    align-items: center; /* Centered vertically */
+    z-index: 2000; /* Sit on top */
 }
 
-.note-item {
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: var(--max-width)*0.8;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    position: relative; /* Ensure positioning is relative for top adjustment */
+    top: 50%; /* Move content down by 50% of parent height */
+    transform: translateY(-50%); /* Adjust for half of its own height */
+}
+
+.modal-input {
+    width: 100%; /* Adjust width, accounting for padding */
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+    margin-bottom: 20px;
+}
+
+.modal-input:focus {
+    border-color: #007bff; /* Example focus style */
+    outline: none; /* Remove default focus outline */
+}
+
+.modal-button-container {
+    display: flex;
+    justify-content: space-between; /* Ensure buttons are spaced evenly */
+    margin-top: 10px; /* Adjust spacing from modal content */
+}
+
+.modal-button {
+    padding: 10px 10px; /* Adjust padding as needed */
+    margin: 5px;
+    background-color: #007bff; /* Example button background color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size of the button text */
+}
+
+.modal-button:hover {
+    background-color: #0056b3; /* Darker background color on hover */
 }

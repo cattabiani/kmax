@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KMax</title>
+    <link rel="icon" href="favicon.png" type="image/png">
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -17,6 +18,22 @@
             <!-- Notes will be dynamically added here -->
         </ul>
     </div>
-    <script src="./js/main.js" type="module"></script>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <!-- <span class="close-button" id="closeModalBtn">&times;</span> -->
+            <div id="modalBody">
+                <!-- Modal content will be dynamically added here -->
+            </div>
+            <div class="modal-button-container">
+                <button class="modal-button" id="modalCancelBtn">Cancel</button>
+                <button class="modal-button" id="modalSaveBtn">Save</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="./js/listeners.js" type="module"></script>
 </body>
 </html>
