@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="icon" href="../favicon.png" type="image/png">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div id="app">
+        <header class="top-bar">
+            <h1>Notes</h1>
+            <button id="addNoteBtn">Add Note</button>
+        </header>
+        <ul id="notesList" class="notes-list">
+            <!-- Notes will be dynamically added here -->
+        </ul>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-button-container">
+                <button class="modal-button" id="modalCancelBtn">Cancel</button>
+                <button class="modal-button" id="modalSaveBtn">Save</button>
+            </div>
+            <div id="modalBody">
+                <label for="modalTitle">Title:</label>
+                <input type="text" id="modalTitle" class="modal-input">
+
+                <label for="modalInfo">Info:</label>
+                <textarea id="modalInfo" rows="4" class="modal-input"></textarea>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="../js/notes/listeners.js" type="module"></script>
+</body>
+</html>

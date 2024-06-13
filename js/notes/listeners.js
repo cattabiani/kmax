@@ -1,5 +1,4 @@
 
-import { registerServiceWorker } from './service-worker.js';
 import { modal2editNodeForm } from './notes.js';
 
 
@@ -7,7 +6,6 @@ import { modal2editNodeForm } from './notes.js';
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('addNoteBtn').addEventListener('click', function() {
         modal2editNodeForm();
-        console.log("AAA");
     });
 
     // When the modal is clicked
@@ -18,5 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    registerServiceWorker();
+    document.getElementById('modalCancelBtn').addEventListener('click', function() {
+        document.getElementById('modal').style.display = 'none';
+    });
 });
