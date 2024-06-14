@@ -1,15 +1,51 @@
-////////////// listeners
 
-export function modal2editNodeForm(note) {
-
-    const title = document.getElementById('modalTitle');
-    const info = document.getElementById('modalInfo');
-
-    title.value = (note != null)  ? note.title : '';
-    info.value = (note != null)  ? note.info : '';
-
-    modal.style.display = 'block';
-    title.focus();
-
+class Note {
+    constructor(title, info) {
+        this.title = title;
+        this.info = info;
+        //   this.timestamp = new Date();
+    }
 }
+
+
+
+class NotesManager {
+    constructor() {
+        this.notes = [];
+    }
+
+
+    editNote(title, info, index) {
+        if (index < 0 || index >= this.notes.length) {
+            this.addNote(title, info);
+            return this.length-1;
+        } else {
+            this.notes[index].title = title;
+            this.notes[index].info = info;
+            return index;
+        }
+    }
+
+    addNote(title, info) {
+        const note = new Note(title, info);
+        this.notes.push(note);
+
+        return note;
+    }
+
+    removeNote(index) {
+        if (index >= 0 && index < this.notes.length) {
+            this.notes.splice(index, 1);
+        }
+    }
+
+    get length() {
+        return this.notes.length;
+    }
+}
+
+const notesManager = new NotesManager();
+export default notesManager;
+
+
 

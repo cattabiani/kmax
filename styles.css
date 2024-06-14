@@ -125,3 +125,34 @@ body {
 .modal-button:hover {
     background-color: #0056b3; /* Darker background color on hover */
 }
+
+.notes-list {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.note {
+    width: 100%; /* Ensure note div spans full width */
+    display: flex;
+    flex-direction: column;
+    min-height: 70px;
+    justify-content: center;
+}
+
+.note h3 {
+    margin-top: 4px;
+    font-size: 18px; /* Title font size */
+    margin-bottom: 2px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.note p {
+    margin-top: 2px;
+    margin-bottom: 4px; 
+    color: #666; 
+    font-size: 14px; 
+    margin-left: 8px;
+    margin-right: 8px;
+}
